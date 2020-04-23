@@ -1,0 +1,1 @@
+g++ -o cas.exe src/*.cpp -Iinclude
