@@ -8,7 +8,7 @@ class Variable : public Node {
 public:
     std::string name;
 
-    Variable(Node *parent, std::string name) : Node(parent, NodeType::VARIABLE) {
+    Variable(std::string name) : Node(NodeType::VARIABLE) {
         this->name = name;
     }
 

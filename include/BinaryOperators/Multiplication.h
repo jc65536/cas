@@ -5,7 +5,10 @@
 
 class Multiplication : public BinaryOperator {
 public:
-    Multiplication(Node *parent);
+    Multiplication(Node *factor1, Node *factor2) {
+        left = factor1;
+        right = factor2;
+    }
     
     Node *eval();
 };

@@ -5,7 +5,10 @@
 
 class Division : public BinaryOperator {
 public:
-    Division(Node *parent);
+    Division(Node *numerator, Node *denominator) {
+        left = numerator;
+        right = denominator;
+    }
     
     Node *eval();
 };

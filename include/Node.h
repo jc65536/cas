@@ -12,13 +12,9 @@ enum NodeType {
 
 class Node {
 public:
-    Node *parent;
     NodeType type;
 
-    Node(Node *parent, NodeType type) {
-        this->parent = parent;
-        this->type = type;
-    }
+    Node(NodeType type) : type(type) {}
     
     virtual std::string toString() = 0;
 };

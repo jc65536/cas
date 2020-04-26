@@ -5,7 +5,10 @@
 
 class Addition : public BinaryOperator {
 public:
-    Addition(Node *parent) : BinaryOperator(parent) {}
+    Addition(Node *addend1, Node *addend2) {
+        left = addend1;
+        right = addend2;
+    }
 
     Node *eval();
 
