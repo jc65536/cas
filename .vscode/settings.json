@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "limits": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "initializer_list": "cpp",
+        "istream": "cpp"
+    }
+}
