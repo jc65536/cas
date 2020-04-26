@@ -1,15 +1,25 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include <vector>
 #include <functional>
 #include <string>
+
+enum NodeType {
+    CONSTANT,
+    VARIABLE,
+    BINARY_OPERATOR,
+};
 
 class Node {
 public:
     Node *parent;
+    NodeType type;
+
+    Node(Node *parent, NodeType type) {
+        this->parent = parent;
+        this->type = type;
+    }
     
-    Node(Node *parent);
     virtual std::string toString() = 0;
 };
 

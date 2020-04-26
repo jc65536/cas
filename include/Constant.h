@@ -2,16 +2,22 @@
 #define CONSTANT_H
 
 #include "Node.h"
-#include <string>
+#include <cmath>
 
-template <typename T>
+template <class T>
 class Constant : public Node {
 public:
-    bool exact;
+    bool integral;
     T value;
 
-    Constant(Node *parent, T value);
-    std::string toString();
+    Constant(Node *parent, T value) : Node(parent, NodeType::CONSTANT) {
+        integral = floor(value) == value;
+        this->value = value;
+    }
+
+    std::string toString() {
+        return std::to_string(value);
+    }
 };
 
 #endif // CONSTANT_H
