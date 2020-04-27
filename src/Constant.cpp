@@ -1,4 +1,4 @@
-#include "Constant.h"
+#include "../include/Constant.h"
 
 Constant::Constant(long long value) : Node(NodeType::CONSTANT) {
     exact = true;

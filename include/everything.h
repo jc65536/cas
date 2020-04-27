@@ -8,5 +8,7 @@
 #include "BinaryOperators/Addition.h"
 #include "BinaryOperators/Multiplication.h"
 #include "BinaryOperators/Division.h"
+#include "Exceptions.h"
+#include "Numbers.h"
 
 #endif // EVERYTHING_H

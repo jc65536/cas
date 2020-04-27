@@ -1,7 +1,7 @@
 #ifndef BINARYOPERATOR_H
 #define BINARYOPERATOR_H
 
-#include "Node.h"
+#include "../Node.h"
 
 class BinaryOperator : public Node {
 public:

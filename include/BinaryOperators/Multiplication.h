@@ -1,7 +1,7 @@
 #ifndef MULTIPLICATION_H
 #define MULTIPLICATION_H
 
-#include "BinaryOperators/BinaryOperator.h"
+#include "../BinaryOperators/BinaryOperator.h"
 
 class Multiplication : public BinaryOperator {
 public:

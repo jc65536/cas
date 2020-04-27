@@ -1,7 +1,7 @@
 #ifndef ADDITION_H
 #define ADDITION_H
 
-#include "BinaryOperators/BinaryOperator.h"
+#include "BinaryOperator.h"
 
 class Addition : public BinaryOperator {
 public:
