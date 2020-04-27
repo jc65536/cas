@@ -20,11 +20,18 @@ class Rational : public Number {
     long long denominator;
 public:
     Rational(long long n = 0L, long long d = 1L);
-    Rational operator+  (const Rational right) const;   // +  addition operator
-    Rational operator-  (const Rational right) const;   // -  subtraction operator
-    Rational operator*  (const Rational right) const;   // *  multiplication operator
-    Rational operator/  (const Rational right) const;   // /  division operator
-    bool operator==  (const Rational otherNum) const;   // == equality operator
+
+    virtual Rational operator+  (const Rational& right) const;   // +  addition operator
+    virtual Rational operator-  (const Rational& right) const;   // -  subtraction operator
+    virtual Rational operator*  (const Rational& right) const;   // *  multiplication operator
+    virtual Rational operator/  (const Rational& right) const;   // /  division operator
+
+    Float operator+  (const Float& right) const;
+    Float operator-  (const Float& right) const;
+    Float operator*  (const Float& right) const;
+    Float operator/  (const Float& right) const;
+
+    bool operator==  (const Rational& otherNum) const;   // == equality operator
 
     long long getNumerator() const;
     long long getDenominator() const;
@@ -37,26 +44,37 @@ public:
 class Integer : public Rational {
 public:
     Integer(long long val) : Rational(val) {}
+    Rational operator+  (const Rational& right) const;   // +  addition operator
+    Rational operator-  (const Rational& right) const;   // -  subtraction operator
+    Rational operator*  (const Rational& right) const;   // *  multiplication operator
+    Rational operator/  (const Rational& right) const;   // /  division operator
+
     // Note that we have to override again in order to maintain integer-ness of return value
-    Integer operator+  (const Integer right) const;   // +  addition operator
-    Integer operator-  (const Integer right) const;   // -  subtraction operator
-    Integer operator*  (const Integer right) const;   // *  multiplication operator
-    Integer operator/  (const Integer right) const;   // /  division operator
-    bool operator==  (const Integer otherNum) const;   // == equality operator
+    Integer operator+  (const Integer& right) const;   // +  addition operator
+    Integer operator-  (const Integer& right) const;   // -  subtraction operator
+    Integer operator*  (const Integer& right) const;   // *  multiplication operator
+    Integer operator/  (const Integer& right) const;   // /  division operator
+    bool operator==  (const Integer& otherNum) const;   // == equality operator
 };
 
-Integer gcd(Integer a, Integer b);
-Integer lcm(Integer a, Integer b);
+Integer gcd(const Integer& a, const Integer& b);
+Integer lcm(const Integer& a, const Integer& b);
 
 // Really just a glorified wrapper class
 class Float : public Number {
     double val;
 public:
     Float(double v);
-    Float operator+  (const Float right) const;   // +  addition operator
-    Float operator-  (const Float right) const;   // -  subtraction operator
-    Float operator*  (const Float right) const;   // *  multiplication operator
-    Float operator/  (const Float right) const;   // /  division operator
+    Float operator+  (const Float& right) const;   // +  addition operator
+    Float operator-  (const Float& right) const;   // -  subtraction operator
+    Float operator*  (const Float& right) const;   // *  multiplication operator
+    Float operator/  (const Float& right) const;   // /  division operator
+
+    Float operator+  (const Rational& right) const;   // +  addition operator
+    Float operator-  (const Rational& right) const;   // -  subtraction operator
+    Float operator*  (const Rational& right) const;   // *  multiplication operator
+    Float operator/  (const Rational& right) const;   // /  division operator
+
     Float operator== (const Float otherNum) const;
 
     double getVal() const;
@@ -65,5 +83,6 @@ public:
     Integer iPart() const;
     Float fPart() const;
     Rational toRational() const;
+    std::string toString() const;
 };
 #endif //CAS_NUMBERS_H
