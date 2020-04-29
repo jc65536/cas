@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <cmath>
 #include <utility>
-#include "../include/Numbers.h"
+#include "Numbers.h"
 
 // Uses Euclidean Algorithm
 static long long gcd(long long a, long long b) {

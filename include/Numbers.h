@@ -2,12 +2,17 @@
 // Created by brianton on 4/26/20.
 //
 
+#include "Node.h"
+
 #ifndef CAS_NUMBERS_H
 #define CAS_NUMBERS_H
 
 const long long FLOAT_TO_RATIONAL_PRECISION = 100000000L;
 
-class Number : public Node {};
+class Number : public Node {
+public:
+    Number() : Node(NodeType::NUMBER) {}
+};
 
 // Class Prototypes
 class Rational;

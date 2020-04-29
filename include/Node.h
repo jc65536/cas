@@ -5,7 +5,7 @@
 #include <string>
 
 enum NodeType {
-    CONSTANT,
+    NUMBER,
     VARIABLE,
     BINARY_OPERATOR,
 };
