@@ -7,7 +7,7 @@
 
 const long long FLOAT_TO_RATIONAL_PRECISION = 100000000L;
 
-class Number {};
+class Number : public Node {};
 
 // Class Prototypes
 class Rational;
@@ -19,7 +19,7 @@ class Rational : public Number {
     long long numerator;
     long long denominator;
 public:
-    Rational(long long n = 0L, long long d = 1L);
+    Rational(long long n = 0L, long long d = 1L); // Constructor automatically reduces rational
 
     virtual Rational operator+  (const Rational& right) const;   // +  addition operator
     virtual Rational operator-  (const Rational& right) const;   // -  subtraction operator
@@ -38,7 +38,7 @@ public:
     Float toFloat() const;
     std::string toMixedNum() const;
 
-    virtual std::string toString() const;
+    std::string toString();
 };
 
 class Integer : public Rational {
@@ -55,6 +55,8 @@ public:
     Integer operator*  (const Integer& right) const;   // *  multiplication operator
     Integer operator/  (const Integer& right) const;   // /  division operator
     bool operator==  (const Integer& otherNum) const;   // == equality operator
+
+    std::string toString();
 };
 
 Integer gcd(const Integer& a, const Integer& b);
@@ -83,6 +85,6 @@ public:
     Integer iPart() const;
     Float fPart() const;
     Rational toRational() const;
-    std::string toString() const;
+    std::string toString();
 };
 #endif //CAS_NUMBERS_H

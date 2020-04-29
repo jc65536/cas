@@ -2,7 +2,6 @@
 #define EVERYTHING_H
 
 #include "Node.h"
-#include "Constant.h"
 #include "Variable.h"
 #include "BinaryOperators/BinaryOperator.h"
 #include "BinaryOperators/Addition.h"

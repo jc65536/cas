@@ -15,6 +15,10 @@ public:
     std::string toString() {
         return this->name;
     }
+
+    bool operator==(const Variable &v) const {
+        return this->name == v.name;
+    }
 };
 
 #endif // VARIABLE_H

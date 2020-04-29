@@ -64,7 +64,7 @@ std::string Rational::toMixedNum() const {
            std::to_string(denominator);
 }
 
-std::string Rational::toString() const {
+std::string Rational::toString() {
     return (denominator == 1) ?  std::to_string(numerator) : std::to_string(numerator) + "/" + std::to_string(denominator);
 }
 
@@ -118,6 +118,10 @@ Rational Integer::operator*(const Rational& right) const {
 
 Rational Integer::operator/(const Rational& right) const {
     return Rational::operator/(right);
+}
+
+std::string Integer::toString() {
+    return std::to_string(this->getNumerator());
 }
 
 Integer gcd(const Integer& a, const Integer& b) {
@@ -192,6 +196,6 @@ Float Float::operator/(const Rational& right) const {
     return {getVal() * right.toFloat().getVal()};
 }
 
-std::string Float::toString() const {
+std::string Float::toString() {
     return std::to_string(getVal());
 }
